@@ -2,6 +2,8 @@ import './styles.css';
 import { totalReviews, populateUser } from './utils';
 
 
+let isOpen: boolean;
+
 const reviews = [
     {
         name: 'Sheia',
@@ -26,9 +28,16 @@ const reviews = [
 
 totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 
-const you = {
-    userName: {firstName: 'Bobby', lastName: 'Brown'},
-    isReturning: false,
+const you: {
+    firstName : string;
+    lastName: string;
+    age: number
+    isReturning: boolean;
+} = {
+    firstName: 'Bobby',
+    lastName: 'Brown',
+    age: 35,
+    isReturning: true,
 }
 
-populateUser(you.isReturning, you.userName.firstName)
+populateUser(you.isReturning, you.firstName)
