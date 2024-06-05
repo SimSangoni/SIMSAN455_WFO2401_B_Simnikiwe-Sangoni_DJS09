@@ -32,7 +32,13 @@ const reviews = [
 
 
 function totalReviews(review: number){
-    reviewTotalDisplay.innerHTML = review.toString()
+    reviewTotalDisplay.innerHTML = `review total  ${review.toString()}`
 }
 
 totalReviews(reviews.length)
+
+function recentViewer(viewer: string){
+    reviewTotalDisplay.innerHTML += ` ${viewer}`
+}
+
+recentViewer(reviews[reviews.length-1].name)
