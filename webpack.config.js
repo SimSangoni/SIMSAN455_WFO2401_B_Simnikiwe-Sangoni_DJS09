@@ -3,11 +3,11 @@ const path = require('path');
 module.exports = {
   mode: 'development', // or 'production' depending on your environment
   entry: {
-    index: './src/index.ts', // Assuming your TypeScript files are in a 'src' directory
+    index: './src/index.ts',
   },
   output: {
     filename: '[name].pack.js',
-    path: path.resolve(__dirname, 'dist'), // Output directory
+    path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
     extensions: ['.ts', '.js', '.json'],
@@ -21,10 +21,16 @@ module.exports = {
           loader: 'ts-loader',
         },
       },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   devServer: {
-    contentBase: path.join(__dirname, 'public'), // Serve content from the 'public' directory
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
     compress: true,
     port: 8080,
   },
