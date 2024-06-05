@@ -1,17 +1,5 @@
 import './styles.css';
-
-
-// Boolean Types mini-challenge
-// if the last reviewer is a loyalty User, can you add a star to the end of their name?
-// please do so in the existing function, and make sure to declare what type of 
-// parameters the function takes.
-// : boolean
-
-
-
-const returningUserDisplay = document.querySelector('#returning-user') as HTMLElement
-const userNameDisplay = document.querySelector('#user') as HTMLElement;
-const reviewTotalDisplay = document.querySelector('#reviews') as HTMLElement;
+import { totalReviews, populateUser } from './utils';
 
 
 const reviews = [
@@ -36,24 +24,11 @@ const reviews = [
 ]
 
 
-function totalReviews(review: number, viewer: string, loyal: boolean ){
-    const loyaltyStar = loyal? "⭐": ""
-    reviewTotalDisplay.innerHTML = `review total  ${review.toString()} 
-    | last reviewed by ${viewer} ${loyaltyStar}`
-}
-
 totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 
 const you = {
     userName: {firstName: 'Bobby', lastName: 'Brown'},
     isReturning: false,
-}
-
-function populateUser(isReturning: boolean, userName: string ) {
-    if (isReturning){
-        returningUserDisplay.innerHTML = 'back'
-    }
-    userNameDisplay.innerHTML = userName
 }
 
 populateUser(you.isReturning, you.userName.firstName)
