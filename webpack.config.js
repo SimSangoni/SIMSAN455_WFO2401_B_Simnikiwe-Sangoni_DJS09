@@ -1,26 +1,31 @@
+const path = require('path');
+
 module.exports = {
-  "output": {
-    "filename": "[name].pack.js"
+  mode: 'development', // or 'production' depending on your environment
+  entry: {
+    index: './src/index.ts', // Assuming your TypeScript files are in a 'src' directory
   },
-  "entry": {
-    "index": "./index"
+  output: {
+    filename: '[name].pack.js',
+    path: path.resolve(__dirname, 'dist'), // Output directory
   },
-  "resolve": {
-    "extensions": [
-      ".ts",
-      ".js",
-      ".json"
-    ]
+  resolve: {
+    extensions: ['.ts', '.js', '.json'],
   },
-  "module": {
-    "rules": [
+  module: {
+    rules: [
       {
-        "use": {
-          "loader": "ts-loader"
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'ts-loader',
         },
-        "exclude": /node_modules/,
-        "test": /\.ts$/
-      }
-    ]
-  }
+      },
+    ],
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'public'), // Serve content from the 'public' directory
+    compress: true,
+    port: 8080,
+  },
 };
