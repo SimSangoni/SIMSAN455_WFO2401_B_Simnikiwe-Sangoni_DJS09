@@ -57,3 +57,13 @@ export function updateTime() {
     // console.log(time)
     return time
 }
+
+let authorityStatus : any
+
+export function showDetails(authorityStatus: any, element : HTMLDivElement, price: number) {
+   if (authorityStatus) {
+       const priceDisplay = document.createElement('div')
+       priceDisplay.innerHTML = price.toString() + '/night'
+       element.appendChild(priceDisplay)
+   }
+}

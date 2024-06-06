@@ -1,5 +1,5 @@
 import './styles.css';
-import { totalReviews, populateUser, populateProperty, updateTime } from './utils';
+import { totalReviews, populateUser, populateProperty, updateTime, showDetails } from './utils';
 const footer = document.querySelector('.footer') as HTMLElement
 import { Permissions, UserLoyalty } from './enums'
 
@@ -12,7 +12,7 @@ import londonProperty from './images/london-property.jpg';
 
 
 
-let isOpen: boolean;
+let isLoggedIn: boolean
 
 
 // Reviews
