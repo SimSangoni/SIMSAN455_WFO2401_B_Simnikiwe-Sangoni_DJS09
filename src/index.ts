@@ -1,6 +1,7 @@
 import './styles.css';
-import { totalReviews, populateUser, populateProperty, updateTime } from './utils';
+import { totalReviews, populateUser, updateTime } from './utils';
 const footer = document.querySelector('.footer') as HTMLElement
+const propertyDisplay = document.querySelector('.properties') as HTMLElement;
 import { Permissions, UserLoyalty } from './enums'
 import { Country, Price } from './types';
 
@@ -134,6 +135,45 @@ totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 populateUser(you.isReturning, you.firstName)
 
 populateProperty(properties)
+
+// Functions
+
+function populateProperty(properties: {
+    image: string;
+    title: string;
+    pricePerNight: number;
+    location: {
+        lineAddres: string;
+        townCity: string;
+        postCode: number;
+        country: string;
+    };
+    contact: [number, string];
+    isAvailable: boolean;
+}[]){
+    properties.map(property => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.innerText = property.title;
+        const image = document.createElement('img');
+        image.setAttribute('src', property.image);
+        card.appendChild(image)
+        propertyDisplay.appendChild(card)
+        showDetails(you.permissions, card, property.pricePerNight)
+    })
+}
+
+let isLoggedIn: boolean
+isLoggedIn = false
+
+function showDetails(authorityStatus: boolean | Permissions, cardElement : HTMLDivElement, price: number) {
+   if (authorityStatus) {
+       const priceDisplay = document.createElement('div')
+       priceDisplay.innerHTML = price.toString() + '/night'
+       cardElement.appendChild(priceDisplay)
+       
+   }
+}
 
 
 
