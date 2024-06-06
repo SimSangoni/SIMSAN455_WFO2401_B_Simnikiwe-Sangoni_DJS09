@@ -1,5 +1,5 @@
 import './styles.css';
-import { totalReviews, populateUser, populateProperty } from './utils';
+import { totalReviews, populateUser, populateProperty, updateTime } from './utils';
 
 
 // Import images
@@ -157,11 +157,6 @@ console.error(error2)
 }
 
 
-function updateTime() {
-    const time = new Date().toLocaleTimeString()
-    // console.log(time)
-    return time
-}
 
 
 

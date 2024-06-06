@@ -43,3 +43,8 @@ export function populateProperty(properties: {
     })
 }
 
+export function updateTime() {
+    const time = new Date().toLocaleTimeString()
+    // console.log(time)
+    return time
+}
