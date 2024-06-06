@@ -128,14 +128,6 @@ const properties: {
 ]
 
 
-// Functions Call
-
-totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
-
-populateUser(you.isReturning, you.firstName)
-
-populateProperty(properties)
-
 // Functions
 
 function populateProperty(properties: {
@@ -201,7 +193,13 @@ console.error(error2)
 }
 
 
+// Functions Call
 
+totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
+
+populateUser(you.isReturning, you.firstName)
+
+populateProperty(properties)
 
 
 

@@ -1,5 +1,4 @@
 import { UserLoyalty } from "./enums";
-import { Permissions } from "./enums";
 
 const returningUserDisplay = document.querySelector('#returning-user') as HTMLElement
 const userNameDisplay = document.querySelector('#user') as HTMLElement;
@@ -17,7 +16,7 @@ export function totalReviews(review: number, viewer: string, loyal: UserLoyalty 
     } else {
         loyaltyIcon = '🥈'
     }
-    reviewTotalDisplay.innerHTML = `review total  ${review.toString()} 
+    reviewTotalDisplay.innerHTML = `${review.toString()} Review${makeMultiple(review)}
     | last reviewed by ${viewer} ${loyaltyIcon}`
 }
 
@@ -29,12 +28,20 @@ export function populateUser(isReturning: boolean, userName: string ) {
 }
 
 
-
-
 export function updateTime() {
     const time = new Date().toLocaleTimeString()
     // console.log(time)
     return time
 }
 
+
+// Function Return Types + Void Types mini-challenge
+// Instead of having a long 'review total 3', can you make the line say '3 reviews', or '1 review'
+// if there is only one? Use a function to do this and assing a type to the functions return.
+
+export function makeMultiple(value: number):string {
+    if (value > 1 || value == 0) {
+        return 's'
+    } else return ''
+}
 
