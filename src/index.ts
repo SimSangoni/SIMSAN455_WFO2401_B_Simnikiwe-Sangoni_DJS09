@@ -62,20 +62,20 @@ const properties: {
     isAvailable: boolean;
 }[]=[
     {
-    image:'images/colombia-property.jpg', 
-    title: 'Colombian Shack',
-    pricePerNight: 45,
-    location: {
-        lineAddres: 'Shack 37',
-        townCity: 'Bogota',
-        postCode: 45632,
-        country: 'Colombia',
-    },
-    contact: 'marywinkle@gmail.com',
-    isAvailable: true,
+        image:'../images/colombia-property.jpg', 
+        title: 'Colombian Shack',
+        pricePerNight: 45,
+        location: {
+            lineAddres: 'Shack 37',
+            townCity: 'Bogota',
+            postCode: 45632,
+            country: 'Colombia',
+        },
+        contact: 'marywinkle@gmail.com',
+        isAvailable: true,
     },
     {
-        image: 'images/poland-property.jpg',
+        image: '../images/poland-property.jpg',
         title: 'Polish Cottage',
         pricePerNight: 34,
         location: {
@@ -88,7 +88,7 @@ const properties: {
         isAvailable: false 
     },
     {
-        image: 'images/london-property.jpg',
+        image: '../images/london-property.jpg',
         title: 'London Flat',
         pricePerNight: 23,
         location: {
