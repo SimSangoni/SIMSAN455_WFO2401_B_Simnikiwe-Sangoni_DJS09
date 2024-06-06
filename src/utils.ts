@@ -1,7 +1,7 @@
 const returningUserDisplay = document.querySelector('#returning-user') as HTMLElement
 const userNameDisplay = document.querySelector('#user') as HTMLElement;
 const reviewTotalDisplay = document.querySelector('#reviews') as HTMLElement;
-const propertyDisplay = document.querySelector('#properties') as HTMLElement;
+const propertyDisplay = document.querySelector('.properties') as HTMLElement;
 
 
 
