@@ -4,7 +4,12 @@ import { totalReviews, populateUser } from './utils';
 
 let isOpen: boolean;
 
-const reviews = [
+const reviews: {
+    name: string;
+    stars: number;
+    loyaltyUser: boolean;
+    date: string;
+}[] = [
     {
         name: 'Sheia',
         stars: 5,
@@ -33,11 +38,13 @@ const you: {
     lastName: string;
     age: number
     isReturning: boolean;
+    stayedAt: string[]
 } = {
     firstName: 'Bobby',
     lastName: 'Brown',
     age: 35,
     isReturning: true,
+    stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
 populateUser(you.isReturning, you.firstName)
