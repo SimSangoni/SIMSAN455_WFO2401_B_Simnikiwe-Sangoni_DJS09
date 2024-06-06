@@ -3,10 +3,12 @@ import colombiaProperty from './images/colombia-property.jpg';
 import polandProperty from './images/poland-property.jpg';
 import londonProperty from './images/london-property.jpg';
 import malaysiaProperty from './images/malaysian-property.jpg'
+import italianProperty from './images/italian-property.jpg';
 
 
 import { PropertyInterface } from './interface';
-
+import { UserLoyalty } from './enums'
+import { MainProperty } from './Class';
 
 
 // Properties
@@ -65,3 +67,12 @@ export const properties: PropertyInterface[]=[
         isAvailable: false,}
 ]
 
+
+// Main Propery Object
+
+export let yourMainProperty = new MainProperty('Italian House', [{
+    name: 'Olive',
+    stars: 5,
+    loyaltyUser: UserLoyalty.GOLD,
+    date: '12-04-2021'
+}], italianProperty, )
