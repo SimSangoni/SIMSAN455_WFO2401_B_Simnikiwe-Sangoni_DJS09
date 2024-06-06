@@ -47,12 +47,6 @@ const you: {
 }
 
 
-
-// Object Types Challenge
-// Based on what we discussed we need to make up our Property Objects and array,
-// can you create that array, making sure to assign the correct Types?
-
-
 // Properties
 const properties: {
     image: string;
