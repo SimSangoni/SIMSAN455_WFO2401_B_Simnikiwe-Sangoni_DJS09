@@ -2,6 +2,7 @@
 import colombiaProperty from './images/colombia-property.jpg';
 import polandProperty from './images/poland-property.jpg';
 import londonProperty from './images/london-property.jpg';
+import malaysiaProperty from './images/malaysian-property.jpg'
 
 
 import { PropertyInterface } from './interface';
@@ -49,6 +50,18 @@ export const properties: PropertyInterface[]=[
         },
         contact: [ +1123495082908, 'andyluger@aol.com'],
         isAvailable: true
-    }
+    },
+    {
+        image: malaysiaProperty, 
+        title: 'Malia Hotel',
+        pricePerNight: 35,
+        location: {
+            lineAddres: 'Room 4',
+            townCity: 'Malia',
+            postCode: 45632,
+            country: 'Malaysia',
+        },
+        contact: [ +60349822083, 'lee34@gmail.com'],
+        isAvailable: false,}
 ]
 
