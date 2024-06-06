@@ -10,6 +10,7 @@ const reviewTotalDisplay = document.querySelector('#reviews') as HTMLElement;
 const propertyDisplay = document.querySelector('.properties') as HTMLElement;
 const container = document.querySelector('.container') as HTMLElement;
 const button = document.querySelector('button') as HTMLElement;
+const footer = document.querySelector('.footer') as HTMLElement;
 
 
 
@@ -95,3 +96,28 @@ export function addReviews(array: Review []) : void {
     }
 }
 
+export async function getLocationAndWeather(): Promise<void> {
+    try {
+        navigator.geolocation.getCurrentPosition(async position => {
+            const weatherRes = await fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`) 
+                if (!weatherRes.ok) {
+                    throw Error("Weather data not available")
+                }
+            const data2 = await weatherRes.json()
+            let time = updateTime();
+                
+            let currentLocation: [string, string, number] = [data2.name, time, Math.round(data2.main.temp)];
+            
+            footer.innerHTML = `${currentLocation[0]} ${currentLocation[1]} ${currentLocation[2]}°`;
+            
+            setInterval(() => {
+                time = updateTime();
+                currentLocation[1] = time;
+                footer.innerHTML = `${currentLocation[0]} ${currentLocation[1]} ${currentLocation[2]}°`;
+            }, 1000); 
+        });
+        } catch(error2){
+        console.error(error2)
+        } 
+    
+}
