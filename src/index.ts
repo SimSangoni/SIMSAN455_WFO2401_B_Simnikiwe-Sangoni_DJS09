@@ -16,33 +16,37 @@ let isOpen: boolean;
 
 
 // Reviews
-const reviews: {
+const reviews: ({
     name: string;
     stars: number;
     loyaltyUser: UserLoyalty;
     date: string;
-    review: any;
-}[] = [
+} |
+{
+    name: string;
+    stars: number;
+    loyaltyUser: UserLoyalty;
+    date: string;
+    reviewDescription: any;
+}) [] = [
     {
         name: 'Sheia',
         stars: 5,
         loyaltyUser: UserLoyalty.GOLD,
         date: '01-04-2021',
-        review: 45,
     },
     {
         name: 'Andrzej',
         stars: 3,
         loyaltyUser: UserLoyalty.BRONZE,
         date: '28-03-2021',
-        review: true,
     },
     {
         name: 'Omar',
         stars: 4,
         loyaltyUser: UserLoyalty.SILVER,
         date: '27-03-2021',
-        review: 'I dont know'
+        reviewDescription: 'I dont know'
     },
 ]
 
