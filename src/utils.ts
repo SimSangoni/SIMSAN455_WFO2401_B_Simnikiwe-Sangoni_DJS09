@@ -32,11 +32,12 @@ export function populateProperty(properties: {
     isAvailable: boolean;
 }[]){
     properties.map(property => {
-        propertyDisplay.innerHTML +=
-        `<div class="card" id="card">
-            <h2>${property.title}<h2>
-            <img src=${property.image} />
-        </div>
-        `
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.innerText = property.title;
+        const image = document.createElement('img');
+        image.setAttribute('src', property.image);
+        card.appendChild(image)
+        propertyDisplay.appendChild(card)
     })
 }

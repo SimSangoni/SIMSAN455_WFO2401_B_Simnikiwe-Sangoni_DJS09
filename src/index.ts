@@ -113,9 +113,4 @@ totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 
 populateUser(you.isReturning, you.firstName)
 
-// Add the properties to the Dashboard
-// This is a continuation of the Challenge, in which you are asked to add
-// the 3 properties image and title to the dashboard based on the 
-// properties array
-
 populateProperty(properties)
