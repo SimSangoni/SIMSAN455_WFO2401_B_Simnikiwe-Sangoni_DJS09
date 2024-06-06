@@ -28,7 +28,7 @@ export function populateProperty(properties: {
         postCode: number;
         country: string;
     };
-    contact: string;
+    contact: [number, string];
     isAvailable: boolean;
 }[]){
     properties.map(property => {

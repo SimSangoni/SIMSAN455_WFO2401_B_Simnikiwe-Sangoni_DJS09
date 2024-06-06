@@ -62,7 +62,7 @@ const properties: {
         postCode: number;
         country: string;
     };
-    contact: string;
+    contact: [number, string];
     isAvailable: boolean;
 }[]=[
     {
@@ -75,7 +75,7 @@ const properties: {
             postCode: 45632,
             country: 'Colombia',
         },
-        contact: 'marywinkle@gmail.com',
+        contact: [ +1123495082908, 'marywinkle@gmail.com'],
         isAvailable: true,
     },
     {
@@ -88,7 +88,7 @@ const properties: {
             postCode: 343903,
             country: 'Poland'
         },
-        contact: 'garydavis@hotmail.com',
+        contact: [+1123495082908, 'garydavis@hotmail.com'],
         isAvailable: false 
     },
     {
@@ -101,7 +101,7 @@ const properties: {
             postCode: 35433,
             country: 'United Kingdom',
         },
-        contact: 'andyluger@aol.com',
+        contact: [ +1123495082908, 'andyluger@aol.com'],
         isAvailable: true
     }
 ]
