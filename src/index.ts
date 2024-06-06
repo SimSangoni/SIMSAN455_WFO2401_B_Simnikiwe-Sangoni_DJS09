@@ -2,6 +2,7 @@ import './styles.css';
 import { totalReviews, populateUser, updateTime, getTopTwoReviews } from './utils';
 import { Permissions, UserLoyalty } from './enums'
 import { Country, Price } from './types';
+import { Review } from './interface';
 
 // HTML Elements
 const footer = document.querySelector('.footer') as HTMLElement
@@ -18,19 +19,7 @@ import londonProperty from './images/london-property.jpg';
 
 
 // Reviews
-const reviews: ({
-    name: string;
-    stars: number;
-    loyaltyUser: UserLoyalty;
-    date: string;
-} |
-{
-    name: string;
-    stars: number;
-    loyaltyUser: UserLoyalty;
-    date: string;
-    reviewDescription: any;
-}) [] = [
+const reviews:  Review[]  = [
     {
         name: 'Sheia',
         stars: 5,
@@ -48,7 +37,6 @@ const reviews: ({
         stars: 4,
         loyaltyUser: UserLoyalty.SILVER,
         date: '27-03-2021',
-        reviewDescription: 'I dont know'
     },
 ]
 
