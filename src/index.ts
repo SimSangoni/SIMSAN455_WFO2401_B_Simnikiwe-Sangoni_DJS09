@@ -1,10 +1,14 @@
 import './styles.css';
 import { totalReviews, populateUser, populateProperty } from './utils';
 
+
 // Import images
 import colombiaProperty from './images/colombia-property.jpg';
 import polandProperty from './images/poland-property.jpg';
 import londonProperty from './images/london-property.jpg';
+
+
+const footer = document.querySelector('.footer') as HTMLElement
 
 let isOpen: boolean;
 
@@ -124,5 +128,36 @@ populateProperty(properties)
 
 // use your location, your current time, and the current temperature of your
 // location
-let currentLocation
-// footer.innerHTML = currentLocation
+
+
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+      console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+    });
+  } else {
+    console.log("Geolocation is not supported by this browser.");
+  }
+
+
+try {
+navigator.geolocation.getCurrentPosition(async position => {
+    // console.log(position)
+    const weatherRes = await fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`) 
+        if (!weatherRes.ok) {
+            throw Error("Weather data not available")
+        }
+    const data2 = await weatherRes.json()
+    const time = new Date().toLocaleTimeString()
+
+    let currentLocation:[string, string, number] = [data2.name, time, Math.round(data2.main.temp)]
+    footer.innerHTML = `${currentLocation[0]}  ${currentLocation[1]}  ${currentLocation[2]}°`
+    });
+} catch(error2){
+console.error(error2)
+}
+
+
+
+
