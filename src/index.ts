@@ -4,6 +4,7 @@ import { Permissions, UserLoyalty } from './enums'
 import { PropertyInterface, Review } from './interface';
 import { MainProperty } from './Class';
 import { properties } from './Properties';
+import { reviews } from './Reviews';
 
 // HTML Elements
 const footer = document.querySelector('.footer') as HTMLElement
@@ -17,29 +18,6 @@ const mainImageContainer = document.querySelector('.main-image') as HTMLElement;
 import italianProperty from './images/italian-property.jpg';
 
 
-// Reviews
-const reviews:  Review[]  = [
-    {
-        name: 'Sheia',
-        stars: 5,
-        loyaltyUser: UserLoyalty.GOLD,
-        date: '01-04-2021',
-    },
-    {
-        name: 'Andrzej',
-        stars: 3,
-        loyaltyUser: UserLoyalty.BRONZE,
-        date: '28-03-2021',
-    },
-    {
-        name: 'Omar',
-        stars: 4,
-        loyaltyUser: UserLoyalty.SILVER,
-        date: '27-03-2021',
-    },
-]
-
-
 const you = {
     firstName: 'Simnikiwe',
     lastName: 'Sangoni',
@@ -48,11 +26,6 @@ const you = {
     age: 35,
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
-
-
-
-// Properties
-
 
 
 // Functions

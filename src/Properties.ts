@@ -6,6 +6,10 @@ import londonProperty from './images/london-property.jpg';
 
 import { PropertyInterface } from './interface';
 
+
+
+// Properties
+
 export const properties: PropertyInterface[]=[
     {
         image: colombiaProperty, 
