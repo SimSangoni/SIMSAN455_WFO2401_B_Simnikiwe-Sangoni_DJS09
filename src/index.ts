@@ -1,8 +1,8 @@
 import './styles.css';
 import { totalReviews, populateUser, updateTime, getTopTwoReviews } from './utils';
 import { Permissions, UserLoyalty } from './enums'
-import { Country, Price } from './types';
 import { PropertyInterface, Review } from './interface';
+import { MainProperty } from './Class';
 
 // HTML Elements
 const footer = document.querySelector('.footer') as HTMLElement
@@ -10,6 +10,7 @@ const propertyDisplay = document.querySelector('.properties') as HTMLElement;
 const button = document.querySelector('button') as HTMLElement;
 const reviewContainer = document.querySelector('.reviews') as HTMLElement;
 const container = document.querySelector('.container') as HTMLElement;
+const mainImageContainer = document.querySelector('.main-image') as HTMLElement;
 
 
 // Import images
@@ -111,8 +112,8 @@ function populateProperty(properties: PropertyInterface[]){
     })
 }
 
-let isLoggedIn: boolean
-isLoggedIn = false
+// let isLoggedIn: boolean
+// isLoggedIn = false
 
 function showDetails(authorityStatus: boolean | Permissions, cardElement : HTMLDivElement, price: number) {
    if (authorityStatus) {
@@ -174,3 +175,13 @@ function addReviews(array: Review []) : void {
 
 button.addEventListener('click', () => addReviews(reviews))
 
+
+// Wrapping up our Dashboard
+// 1. Create All the other interfaces you think are needed for this board
+// 2. Using the Class, visually show the main Image above the review button.
+
+// let yourMainProperty = new MainProperty()
+
+// const image = document.createElement('img')
+// image.setAttribute('src', yourMainProperty.src)
+// mainImageContainer.appendChild(image)
