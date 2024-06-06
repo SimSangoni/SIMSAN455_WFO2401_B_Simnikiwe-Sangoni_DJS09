@@ -158,12 +158,7 @@ populateUser(you.isReturning, you.firstName)
 populateProperty(properties)
 
 let count = 0
-function addReviews(array: {
-    name: string;
-    stars: number;
-    loyaltyUser: UserLoyalty;
-    date: string;
-}[]) : void {
+function addReviews(array: Review []) : void {
     if (!count ) {
         count++
         const topTwo = getTopTwoReviews(array)
