@@ -69,11 +69,13 @@ const you = {
 }
 
 
+type Price = 45 | 30 | 25
+
 // Properties
 const properties: {
     image: string;
     title: string;
-    pricePerNight: number;
+    pricePerNight: Price;
     location: {
         lineAddres: string;
         townCity: string;
@@ -99,7 +101,7 @@ const properties: {
     {
         image: polandProperty,
         title: 'Polish Cottage',
-        pricePerNight: 34,
+        pricePerNight: 30,
         location: {
             lineAddres: 'no 23',
             townCity: 'Gdansk',
@@ -112,7 +114,7 @@ const properties: {
     {
         image: londonProperty,
         title: 'London Flat',
-        pricePerNight: 23,
+        pricePerNight: 25,
         location: {
             lineAddres: 'flat 15',
             townCity: 'London',
