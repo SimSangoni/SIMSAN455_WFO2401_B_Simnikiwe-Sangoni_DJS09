@@ -59,21 +59,47 @@ const properties: {
         country: string;
     };
     contact: string;
-    availabilityToRent: boolean;
+    isAvailable: boolean;
 }[]=[
     {
-    image:'png', 
-    title: 'Simnikiwe',
-    pricePerNight: 350,
+    image:'images/colombia-property.jpg', 
+    title: 'Colombian Shack',
+    pricePerNight: 45,
     location: {
-        lineAddres: 'Fortgale',
-        townCity: 'Mthatha',
-        postCode: 5104,
-        country: 'South Africa',
+        lineAddres: 'Shack 37',
+        townCity: 'Bogota',
+        postCode: 45632,
+        country: 'Colombia',
     },
-    contact: 'email address',
-    availabilityToRent: false,
+    contact: 'marywinkle@gmail.com',
+    isAvailable: true,
     },
+    {
+        image: 'images/poland-property.jpg',
+        title: 'Polish Cottage',
+        pricePerNight: 34,
+        location: {
+            lineAddres: 'no 23',
+            townCity: 'Gdansk',
+            postCode: 343903,
+            country: 'Poland'
+        },
+        contact: 'garydavis@hotmail.com',
+        isAvailable: false 
+    },
+    {
+        image: 'images/london-property.jpg',
+        title: 'London Flat',
+        pricePerNight: 23,
+        location: {
+            lineAddres: 'flat 15',
+            townCity: 'London',
+            postCode: 35433,
+            country: 'United Kingdom',
+        },
+        contact: 'andyluger@aol.com',
+        isAvailable: true
+    }
 ]
 
 
