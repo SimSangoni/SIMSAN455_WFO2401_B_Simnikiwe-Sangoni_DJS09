@@ -49,6 +49,7 @@ export function populateProperty(properties: {
         image.setAttribute('src', property.image);
         card.appendChild(image)
         propertyDisplay.appendChild(card)
+        showDetails(isLoggedIn, card, property.pricePerNight)
     })
 }
 
@@ -58,12 +59,16 @@ export function updateTime() {
     return time
 }
 
-let authorityStatus : any
 
-export function showDetails(authorityStatus: any, element : HTMLDivElement, price: number) {
+let isLoggedIn: boolean
+isLoggedIn = false
+
+
+export function showDetails(authorityStatus: boolean | Permissions, cardElement : HTMLDivElement, price: number) {
    if (authorityStatus) {
        const priceDisplay = document.createElement('div')
        priceDisplay.innerHTML = price.toString() + '/night'
-       element.appendChild(priceDisplay)
+       cardElement.appendChild(priceDisplay)
+       
    }
 }
