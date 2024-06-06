@@ -2,6 +2,7 @@ const returningUserDisplay = document.querySelector('#returning-user') as HTMLEl
 const userNameDisplay = document.querySelector('#user') as HTMLElement;
 const reviewTotalDisplay = document.querySelector('#reviews') as HTMLElement;
 const propertyDisplay = document.querySelector('.properties') as HTMLElement;
+const footer = document.querySelector('.footer') as HTMLElement
 
 
 

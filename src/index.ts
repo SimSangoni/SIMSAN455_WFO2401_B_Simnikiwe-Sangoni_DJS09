@@ -114,3 +114,15 @@ totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 populateUser(you.isReturning, you.firstName)
 
 populateProperty(properties)
+
+// Tuples challenge
+// 1. Add an array to the variable of currentLocation I have added. This array
+// must have your current location, time, and degrees celcius of your location
+// NOTE: make sure to make this a Tuple, to only allow those types in that
+// structure.
+// 2. Add this visually to a footer on your site
+
+// use your location, your current time, and the current temperature of your
+// location
+let currentLocation
+// footer.innerHTML = currentLocation
