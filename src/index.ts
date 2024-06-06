@@ -1,9 +1,12 @@
 import './styles.css';
-import { totalReviews, populateUser, updateTime } from './utils';
+import { totalReviews, populateUser, updateTime, getTopTwoReviews } from './utils';
 const footer = document.querySelector('.footer') as HTMLElement
 const propertyDisplay = document.querySelector('.properties') as HTMLElement;
 import { Permissions, UserLoyalty } from './enums'
 import { Country, Price } from './types';
+const button = document.querySelector('button') as HTMLElement;
+const reviewContainer = document.querySelector('.reviews') as HTMLElement;
+const container = document.querySelector('.container') as HTMLElement;
 
 
 // Import images
@@ -47,19 +50,6 @@ const reviews: ({
     },
 ]
 
-// const you: {
-//     firstName : string;
-//     lastName: string;
-//     age: number
-//     isReturning: boolean;
-//     stayedAt: string[]
-// } = {
-//     firstName: 'Bobby',
-//     lastName: 'Brown',
-//     age: 35,
-//     isReturning: true,
-//     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
-// }
 
 const you = {
     firstName: 'Bobby',
@@ -201,6 +191,25 @@ populateUser(you.isReturning, you.firstName)
 
 populateProperty(properties)
 
+let count = 0
+function addReviews(array: {
+    name: string;
+    stars: number;
+    loyaltyUser: UserLoyalty;
+    date: string;
+}[]) : void {
+    if (!count ) {
+        count++
+        const topTwo = getTopTwoReviews(array)
+        for (let i = 0; i < topTwo.length; i++) {
+            const card = document.createElement('div')
+            card.classList.add('review-card')
+            card.innerHTML = topTwo[i].stars + ' stars from ' + topTwo[i].name
+            reviewContainer.appendChild(card)
+        }
+        container.removeChild(button) 
+    }
+}
 
-
+button.addEventListener('click', () => addReviews(reviews))
 
