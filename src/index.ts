@@ -119,29 +119,17 @@ populateUser(you.isReturning, you.firstName)
 
 populateProperty(properties)
 
-// Tuples challenge
-// 1. Add an array to the variable of currentLocation I have added. This array
-// must have your current location, time, and degrees celcius of your location
-// NOTE: make sure to make this a Tuple, to only allow those types in that
-// structure.
-// 2. Add this visually to a footer on your site
-
-// use your location, your current time, and the current temperature of your
-// location
 
 
 try {
 navigator.geolocation.getCurrentPosition(async position => {
-    // console.log(position)
     const weatherRes = await fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`) 
         if (!weatherRes.ok) {
             throw Error("Weather data not available")
         }
     const data2 = await weatherRes.json()
-    // Set the initial time
     let time = updateTime();
         
-    // Set the location and temperature
     let currentLocation: [string, string, number] = [data2.name, time, Math.round(data2.main.temp)];
     
     footer.innerHTML = `${currentLocation[0]} ${currentLocation[1]} ${currentLocation[2]}°`;
