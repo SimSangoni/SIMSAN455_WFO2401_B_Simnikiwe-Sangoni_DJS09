@@ -1,9 +1,11 @@
 import './styles.css';
 import { totalReviews, populateUser, updateTime, getTopTwoReviews } from './utils';
-const footer = document.querySelector('.footer') as HTMLElement
-const propertyDisplay = document.querySelector('.properties') as HTMLElement;
 import { Permissions, UserLoyalty } from './enums'
 import { Country, Price } from './types';
+
+// HTML Elements
+const footer = document.querySelector('.footer') as HTMLElement
+const propertyDisplay = document.querySelector('.properties') as HTMLElement;
 const button = document.querySelector('button') as HTMLElement;
 const reviewContainer = document.querySelector('.reviews') as HTMLElement;
 const container = document.querySelector('.container') as HTMLElement;
