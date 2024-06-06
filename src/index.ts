@@ -1,5 +1,5 @@
 import './styles.css';
-import { totalReviews, populateUser, updateTime, populateProperty, addReviews, getLocationAndWeather } from './utils';
+import { totalReviews, populateUser, populateProperty, addReviews, getLocationAndWeather } from './utils';
 import { UserLoyalty } from './enums'
 import { MainProperty } from './Class';
 import { properties } from './Properties';
