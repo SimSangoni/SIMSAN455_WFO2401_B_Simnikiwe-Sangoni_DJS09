@@ -69,7 +69,8 @@ const you = {
 }
 
 
-type Price = 45 | 30 | 25
+type Price = 45 | 30 | 25;
+type Country = 'Colombia' | 'Poland' | 'United Kingdom'
 
 // Properties
 const properties: {
@@ -80,7 +81,7 @@ const properties: {
         lineAddres: string;
         townCity: string;
         postCode: number;
-        country: string;
+        country: Country;
     };
     contact: [number, string];
     isAvailable: boolean;
