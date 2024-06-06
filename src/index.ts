@@ -3,6 +3,7 @@ import { totalReviews, populateUser, updateTime, getTopTwoReviews } from './util
 import { Permissions, UserLoyalty } from './enums'
 import { PropertyInterface, Review } from './interface';
 import { MainProperty } from './Class';
+import { properties } from './Properties';
 
 // HTML Elements
 const footer = document.querySelector('.footer') as HTMLElement
@@ -12,11 +13,7 @@ const reviewContainer = document.querySelector('.reviews') as HTMLElement;
 const container = document.querySelector('.container') as HTMLElement;
 const mainImageContainer = document.querySelector('.main-image') as HTMLElement;
 
-
 // Import images
-import colombiaProperty from './images/colombia-property.jpg';
-import polandProperty from './images/poland-property.jpg';
-import londonProperty from './images/london-property.jpg';
 import italianProperty from './images/italian-property.jpg';
 
 
@@ -44,8 +41,8 @@ const reviews:  Review[]  = [
 
 
 const you = {
-    firstName: 'Bobby',
-    lastName: 'Brown',
+    firstName: 'Simnikiwe',
+    lastName: 'Sangoni',
     permissions: Permissions.ADMIN,
     isReturning: true,
     age: 35,
@@ -55,47 +52,7 @@ const you = {
 
 
 // Properties
-const properties: PropertyInterface[]=[
-    {
-        image: colombiaProperty, 
-        title: 'Colombian Shack',
-        pricePerNight: 45,
-        location: {
-            lineAddres: 'Shack 37',
-            townCity: 'Bogota',
-            postCode: 45632,
-            country: 'Colombia',
-        },
-        contact: [ +1123495082908, 'marywinkle@gmail.com'],
-        isAvailable: true,
-    },
-    {
-        image: polandProperty,
-        title: 'Polish Cottage',
-        pricePerNight: 30,
-        location: {
-            lineAddres: 'no 23',
-            townCity: 'Gdansk',
-            postCode: 343903,
-            country: 'Poland'
-        },
-        contact: [+1123495082908, 'garydavis@hotmail.com'],
-        isAvailable: false 
-    },
-    {
-        image: londonProperty,
-        title: 'London Flat',
-        pricePerNight: 25,
-        location: {
-            lineAddres: 'flat 15',
-            townCity: 'London',
-            postCode: 35433,
-            country: 'United Kingdom',
-        },
-        contact: [ +1123495082908, 'andyluger@aol.com'],
-        isAvailable: true
-    }
-]
+
 
 
 // Functions
@@ -188,11 +145,3 @@ const image = document.createElement('img')
 image.setAttribute('src', yourMainProperty.src)
 mainImageContainer.appendChild(image)
 
-// Wrapping up our Dashboard
-// add another property card. The Property should have:
-// 1 x picture of a 'Malaysian Hotel' called 'Malia Hotel'
-// It should cost 35/night
-// It's location should be 'Room 4, Malia , Malaysia, 45334'
-// The contact email should be 'lee34@gmail.com
-// The phone number for the property should be +60349822083
-// It should not be available
