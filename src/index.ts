@@ -130,17 +130,6 @@ populateProperty(properties)
 // location
 
 
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
-      console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
-    });
-  } else {
-    console.log("Geolocation is not supported by this browser.");
-  }
-
-
 try {
 navigator.geolocation.getCurrentPosition(async position => {
     // console.log(position)
@@ -149,14 +138,31 @@ navigator.geolocation.getCurrentPosition(async position => {
             throw Error("Weather data not available")
         }
     const data2 = await weatherRes.json()
-    const time = new Date().toLocaleTimeString()
-
-    let currentLocation:[string, string, number] = [data2.name, time, Math.round(data2.main.temp)]
-    footer.innerHTML = `${currentLocation[0]}  ${currentLocation[1]}  ${currentLocation[2]}°`
-    });
+    // Set the initial time
+    let time = updateTime();
+        
+    // Set the location and temperature
+    let currentLocation: [string, string, number] = [data2.name, time, Math.round(data2.main.temp)];
+    
+    footer.innerHTML = `${currentLocation[0]} ${currentLocation[1]} ${currentLocation[2]}°`;
+    
+    setInterval(() => {
+        time = updateTime();
+        currentLocation[1] = time;
+        footer.innerHTML = `${currentLocation[0]} ${currentLocation[1]} ${currentLocation[2]}°`;
+    }, 1000); 
+});
 } catch(error2){
 console.error(error2)
 }
+
+
+function updateTime() {
+    const time = new Date().toLocaleTimeString()
+    // console.log(time)
+    return time
+}
+
 
 
 
