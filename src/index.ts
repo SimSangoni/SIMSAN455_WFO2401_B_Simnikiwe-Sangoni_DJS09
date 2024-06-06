@@ -17,6 +17,7 @@ const mainImageContainer = document.querySelector('.main-image') as HTMLElement;
 import colombiaProperty from './images/colombia-property.jpg';
 import polandProperty from './images/poland-property.jpg';
 import londonProperty from './images/london-property.jpg';
+import italianProperty from './images/italian-property.jpg';
 
 
 // Reviews
@@ -176,12 +177,22 @@ function addReviews(array: Review []) : void {
 button.addEventListener('click', () => addReviews(reviews))
 
 
+let yourMainProperty = new MainProperty('Italian House', [{
+    name: 'Olive',
+    stars: 5,
+    loyaltyUser: UserLoyalty.GOLD,
+    date: '12-04-2021'
+}], italianProperty, )
+
+const image = document.createElement('img')
+image.setAttribute('src', yourMainProperty.src)
+mainImageContainer.appendChild(image)
+
 // Wrapping up our Dashboard
-// 1. Create All the other interfaces you think are needed for this board
-// 2. Using the Class, visually show the main Image above the review button.
-
-// let yourMainProperty = new MainProperty()
-
-// const image = document.createElement('img')
-// image.setAttribute('src', yourMainProperty.src)
-// mainImageContainer.appendChild(image)
+// add another property card. The Property should have:
+// 1 x picture of a 'Malaysian Hotel' called 'Malia Hotel'
+// It should cost 35/night
+// It's location should be 'Room 4, Malia , Malaysia, 45334'
+// The contact email should be 'lee34@gmail.com
+// The phone number for the property should be +60349822083
+// It should not be available

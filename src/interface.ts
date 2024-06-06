@@ -15,7 +15,7 @@ export interface PropertyInterface {
     location: {
         lineAddres: string;
         townCity: string;
-        postCode: number;
+        postCode: number | string;
         country: Country;
     };
     contact: [number, string];
