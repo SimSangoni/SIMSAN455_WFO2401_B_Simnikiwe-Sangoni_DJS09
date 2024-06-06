@@ -2,6 +2,7 @@ import './styles.css';
 import { totalReviews, populateUser, populateProperty, updateTime } from './utils';
 const footer = document.querySelector('.footer') as HTMLElement
 import { Permissions, UserLoyalty } from './enums'
+import { Country, Price } from './types';
 
 
 // Import images
@@ -69,8 +70,6 @@ const you = {
 }
 
 
-type Price = 45 | 30 | 25;
-type Country = 'Colombia' | 'Poland' | 'United Kingdom'
 
 // Properties
 const properties: {
