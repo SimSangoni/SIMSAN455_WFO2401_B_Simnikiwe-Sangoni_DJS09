@@ -1,5 +1,5 @@
 import './styles.css';
-import { totalReviews, populateUser } from './utils';
+import { totalReviews, populateUser, populateProperty } from './utils';
 
 
 let isOpen: boolean;
@@ -62,7 +62,7 @@ const properties: {
     isAvailable: boolean;
 }[]=[
     {
-        image:'../images/colombia-property.jpg', 
+        image:'./images/colombia-property.jpg', 
         title: 'Colombian Shack',
         pricePerNight: 45,
         location: {
@@ -75,7 +75,7 @@ const properties: {
         isAvailable: true,
     },
     {
-        image: '../images/poland-property.jpg',
+        image: './images/poland-property.jpg',
         title: 'Polish Cottage',
         pricePerNight: 34,
         location: {
@@ -88,7 +88,7 @@ const properties: {
         isAvailable: false 
     },
     {
-        image: '../images/london-property.jpg',
+        image: './images/london-property.jpg',
         title: 'London Flat',
         pricePerNight: 23,
         location: {
@@ -108,3 +108,10 @@ const properties: {
 totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 
 populateUser(you.isReturning, you.firstName)
+
+// Add the properties to the Dashboard
+// This is a continuation of the Challenge, in which you are asked to add
+// the 3 properties image and title to the dashboard based on the 
+// properties array
+
+populateProperty(properties)
