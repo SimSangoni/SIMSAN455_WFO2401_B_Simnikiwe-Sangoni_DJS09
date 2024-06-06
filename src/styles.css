@@ -77,7 +77,7 @@ body {
 }
 
 
-button {
+.reviews-button {
     background-color: green;
     color: white;
     border-radius: 5px;
@@ -85,7 +85,7 @@ button {
     padding: 10px;
 }
 
-button:hover {
+.reviews-button:hover {
     background-color: yellow;
     color: black;
 }
