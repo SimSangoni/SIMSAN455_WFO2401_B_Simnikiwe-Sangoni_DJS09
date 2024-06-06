@@ -3,6 +3,8 @@ const userNameDisplay = document.querySelector('#user') as HTMLElement;
 const reviewTotalDisplay = document.querySelector('#reviews') as HTMLElement;
 const propertyDisplay = document.querySelector('#properties') as HTMLElement;
 
+
+
 export function totalReviews(review: number, viewer: string, loyal: boolean ){
     const loyaltyStar = loyal? "⭐": ""
     reviewTotalDisplay.innerHTML = `review total  ${review.toString()} 
@@ -29,7 +31,6 @@ export function populateProperty(properties: {
     contact: string;
     isAvailable: boolean;
 }[]){
-    // propertyDisplay.appendChild(cardDisplay) = "Is it working first?"
     properties.map(property => {
         propertyDisplay.innerHTML +=
         `<div class="card" id="card">
@@ -39,9 +40,3 @@ export function populateProperty(properties: {
         `
     })
 }
-
-// ()=>{
-//     return {
-//         card.innerHTML = 
-//     }
-// }

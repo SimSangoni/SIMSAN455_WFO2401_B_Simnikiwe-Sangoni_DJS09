@@ -1,6 +1,10 @@
 import './styles.css';
 import { totalReviews, populateUser, populateProperty } from './utils';
 
+// Import images
+import colombiaProperty from './images/colombia-property.jpg';
+import polandProperty from './images/poland-property.jpg';
+import londonProperty from './images/london-property.jpg';
 
 let isOpen: boolean;
 
@@ -62,7 +66,7 @@ const properties: {
     isAvailable: boolean;
 }[]=[
     {
-        image:'./images/colombia-property.jpg', 
+        image: colombiaProperty, 
         title: 'Colombian Shack',
         pricePerNight: 45,
         location: {
@@ -75,7 +79,7 @@ const properties: {
         isAvailable: true,
     },
     {
-        image: './images/poland-property.jpg',
+        image: polandProperty,
         title: 'Polish Cottage',
         pricePerNight: 34,
         location: {
@@ -88,7 +92,7 @@ const properties: {
         isAvailable: false 
     },
     {
-        image: './images/london-property.jpg',
+        image: londonProperty,
         title: 'London Flat',
         pricePerNight: 23,
         location: {
