@@ -24,8 +24,6 @@ button.addEventListener('click', () => addReviews(reviews))
 
 // Create Main Image Object
 
-
-
 const image = document.createElement('img')
 image.setAttribute('src', yourMainProperty.src)
 mainImageContainer.appendChild(image)
