@@ -1,5 +1,7 @@
 import './styles.css';
 import { totalReviews, populateUser, populateProperty, updateTime } from './utils';
+const footer = document.querySelector('.footer') as HTMLElement
+import { Permissions, UserLoyalty } from './enums'
 
 
 // Import images
@@ -8,7 +10,7 @@ import polandProperty from './images/poland-property.jpg';
 import londonProperty from './images/london-property.jpg';
 
 
-const footer = document.querySelector('.footer') as HTMLElement
+
 
 let isOpen: boolean;
 
@@ -17,40 +19,49 @@ let isOpen: boolean;
 const reviews: {
     name: string;
     stars: number;
-    loyaltyUser: boolean;
+    loyaltyUser: UserLoyalty;
     date: string;
 }[] = [
     {
         name: 'Sheia',
         stars: 5,
-        loyaltyUser: true,
+        loyaltyUser: UserLoyalty.GOLD,
         date: '01-04-2021'
     },
     {
         name: 'Andrzej',
         stars: 3,
-        loyaltyUser: false,
+        loyaltyUser: UserLoyalty.BRONZE,
         date: '28-03-2021'
     },
     {
         name: 'Omar',
         stars: 4,
-        loyaltyUser: true,
+        loyaltyUser: UserLoyalty.SILVER,
         date: '27-03-2021'
     },
 ]
 
-const you: {
-    firstName : string;
-    lastName: string;
-    age: number
-    isReturning: boolean;
-    stayedAt: string[]
-} = {
+// const you: {
+//     firstName : string;
+//     lastName: string;
+//     age: number
+//     isReturning: boolean;
+//     stayedAt: string[]
+// } = {
+//     firstName: 'Bobby',
+//     lastName: 'Brown',
+//     age: 35,
+//     isReturning: true,
+//     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
+// }
+
+const you = {
     firstName: 'Bobby',
     lastName: 'Brown',
-    age: 35,
+    permissions: Permissions.ADMIN,
     isReturning: true,
+    age: 35,
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
