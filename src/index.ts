@@ -2,7 +2,7 @@ import './styles.css';
 import { totalReviews, populateUser, updateTime, getTopTwoReviews } from './utils';
 import { Permissions, UserLoyalty } from './enums'
 import { Country, Price } from './types';
-import { Review } from './interface';
+import { PropertyInterface, Review } from './interface';
 
 // HTML Elements
 const footer = document.querySelector('.footer') as HTMLElement
@@ -53,19 +53,7 @@ const you = {
 
 
 // Properties
-const properties: {
-    image: string;
-    title: string;
-    pricePerNight: Price;
-    location: {
-        lineAddres: string;
-        townCity: string;
-        postCode: number;
-        country: Country;
-    };
-    contact: [number, string];
-    isAvailable: boolean;
-}[]=[
+const properties: PropertyInterface[]=[
     {
         image: colombiaProperty, 
         title: 'Colombian Shack',
@@ -110,19 +98,7 @@ const properties: {
 
 // Functions
 
-function populateProperty(properties: {
-    image: string;
-    title: string;
-    pricePerNight: number;
-    location: {
-        lineAddres: string;
-        townCity: string;
-        postCode: number;
-        country: string;
-    };
-    contact: [number, string];
-    isAvailable: boolean;
-}[]){
+function populateProperty(properties: PropertyInterface[]){
     properties.map(property => {
         const card = document.createElement('div');
         card.classList.add('card');
