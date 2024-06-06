@@ -1,60 +1,18 @@
 import './styles.css';
-import { totalReviews, populateUser, updateTime, getTopTwoReviews } from './utils';
-import { Permissions, UserLoyalty } from './enums'
-import { PropertyInterface, Review } from './interface';
+import { totalReviews, populateUser, updateTime, populateProperty, addReviews } from './utils';
+import { UserLoyalty } from './enums'
 import { MainProperty } from './Class';
 import { properties } from './Properties';
 import { reviews } from './Reviews';
+import { you } from './You';
 
 // HTML Elements
 const footer = document.querySelector('.footer') as HTMLElement
-const propertyDisplay = document.querySelector('.properties') as HTMLElement;
 const button = document.querySelector('button') as HTMLElement;
-const reviewContainer = document.querySelector('.reviews') as HTMLElement;
-const container = document.querySelector('.container') as HTMLElement;
 const mainImageContainer = document.querySelector('.main-image') as HTMLElement;
 
 // Import images
 import italianProperty from './images/italian-property.jpg';
-
-
-const you = {
-    firstName: 'Simnikiwe',
-    lastName: 'Sangoni',
-    permissions: Permissions.ADMIN,
-    isReturning: true,
-    age: 35,
-    stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
-}
-
-
-// Functions
-
-function populateProperty(properties: PropertyInterface[]){
-    properties.map(property => {
-        const card = document.createElement('div');
-        card.classList.add('card');
-        card.innerText = property.title;
-        const image = document.createElement('img');
-        image.setAttribute('src', property.image);
-        card.appendChild(image)
-        propertyDisplay.appendChild(card)
-        showDetails(you.permissions, card, property.pricePerNight)
-    })
-}
-
-// let isLoggedIn: boolean
-// isLoggedIn = false
-
-function showDetails(authorityStatus: boolean | Permissions, cardElement : HTMLDivElement, price: number) {
-   if (authorityStatus) {
-       const priceDisplay = document.createElement('div')
-       priceDisplay.innerHTML = price.toString() + '/night'
-       cardElement.appendChild(priceDisplay)
-       
-   }
-}
-
 
 
 try {
@@ -89,23 +47,11 @@ populateUser(you.isReturning, you.firstName)
 
 populateProperty(properties)
 
-let count = 0
-function addReviews(array: Review []) : void {
-    if (!count ) {
-        count++
-        const topTwo = getTopTwoReviews(array)
-        for (let i = 0; i < topTwo.length; i++) {
-            const card = document.createElement('div')
-            card.classList.add('review-card')
-            card.innerHTML = topTwo[i].stars + ' stars from ' + topTwo[i].name
-            reviewContainer.appendChild(card)
-        }
-        container.removeChild(button) 
-    }
-}
 
 button.addEventListener('click', () => addReviews(reviews))
 
+
+// Create Main Image Object
 
 let yourMainProperty = new MainProperty('Italian House', [{
     name: 'Olive',
